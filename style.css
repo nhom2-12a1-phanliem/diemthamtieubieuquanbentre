@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+body {
+    background: url('img/caydua.jpg');
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-group {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .card {
+    top:50px;
+    width: 180px;
+    height: 350px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  
+  .card .layer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75%;
+    opacity: 0;
+    transition: 0.35s;
+  }
+  
+  .card .info {
+    position: absolute;
+    bottom: -58%;
+    padding: 15px;
+    opacity: 0;
+    transition: 0.5s bottom, 1.75s opacity;
+  }
+  .info p {
+    font-size: 14px;
+    margin-top: 3px;
+  }
+  
+  .info button {
+    background: #490CCC;
+    border: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+  /* Khi hover vào thẻ .card */
+.card:hover,
+.card:hover img,
+.card:hover .layer {
+  transform: scale(1.1); /* Tăng kích thước lên 110% */
+}
+
+/* Khi hover vào thẻ .layer bên trong .card */
+.card:hover > .layer {
+  opacity: 1; /* Hiển thị layer */
+}
+
+/* Khi hover vào thẻ .info bên trong .card */
+.card:hover > .info {
+  bottom: 0; /* Đặt phần tử .info xuống dưới cùng */
+  opacity: 1; /* Hiển thị phần tử .info */
+}
+
+/* Khi hover vào nhóm thẻ .card-group, các thẻ .card không bị hover sẽ bị mờ */
+.card-group:hover > .card:not(:hover) {
+  filter: blur(5px); /* Áp dụng hiệu ứng mờ 5px */
+}  
+.navbar-logo{
+    position: fixed; 
+    z-index: 1000;
+    margin-left: 50px;
+    top: 10px;
+    left:0px;
+}
+.navbar-menu {
+    position: fixed; /* Cố định menu trên cùng */
+    top: 10px; /* Căn trên cùng */
+    left: 0; /* Căn trái */
+    width: 97%; /* Chiếm toàn bộ chiều ngang */
+    display: flex; /* Sắp xếp các phần tử theo hàng ngang */
+    justify-content: flex-end; /* Căn đều các link về bên trái */
+    padding: 10px 0px ; /* Khoảng cách trên dưới */
+    z-index: 1000; /* Đảm bảo menu luôn ở trên */
+    margin-top: 20px;
+}
+
+
+.navbar-menu a {
+    color: rgb(12, 30, 34); /* Màu chữ */
+    text-decoration: none; /* Loại bỏ gạch chân */
+    padding: 10px 20px; /* Khoảng cách giữa các link */
+    transition: all 0.3s ease; /* Hiệu ứng hover */
+    margin: 0 10px;
+    background-color: #a7eebc;
+    border: 2px solid white; /* Đường viền màu trắng */
+    border-radius: 8px; 
+}
+.navbar-menu a:hover {
+    background-color: #a0f1a7; /* Màu nền khi hover */
+    border-color: #0fc727; /* Màu viền khi hover (sắc nét hơn) */
+    box-shadow: 0 0 10px rgba(28, 204, 43, 0.7); /* Thêm bóng cho khung khi hover */
+    animation: shake 0.5s;
+}
+.custom-link {
+    display: inline-block; /* Đảm bảo áp dụng được nền và padding */
+    background-color: #e0ebd7; /* Màu nền */
+    color: #140707; /* Màu chữ */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    padding: 10px 15px; /* Khoảng cách bên trong */
+    border-radius: 5px; /* Bo tròn góc */
+    transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+.custom-link:hover {
+    background-color: #a5e45e; /* Thay đổi màu nền khi hover */
+    color: #000; /* Thay đổi màu chữ khi hover */
+}
